@@ -1,0 +1,33 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.3.0'
+    id 'application'
+}
+
+group = 'io.github.davianalbarran'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+kotlin {
+    jvmToolchain(25)
+}
+
+application {
+    mainClass = 'io.github.davianalbarran.main.MainKt'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'io.github.davianalbarran.main.MainKt'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
