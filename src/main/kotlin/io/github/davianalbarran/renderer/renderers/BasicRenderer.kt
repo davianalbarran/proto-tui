@@ -27,7 +27,7 @@ class BasicRenderer: IRenderer {
 
     override fun init() {
         val basicBackgroundColor = backgroundColor?.let { getBasicColorFromTuiColor(it) } ?: BasicColor.BLACK
-        val basicForegroundColor = foregroundColor?.let { getBasicColorFromTuiColor(it) } ?: BasicColor.BLACK
+        val basicForegroundColor = foregroundColor?.let { getBasicColorFromTuiColor(it) } ?: BasicColor.WHITE
 
         val setupString = "${RendererConstants.SGR_PREFIX}${BACKGROUND_SETTER}${basicBackgroundColor.getAnsiCode()};${FOREGROUND_SETTER}${basicForegroundColor.getAnsiCode()}${RendererConstants.SGR_SUFFIX}"
 
@@ -55,7 +55,7 @@ class BasicRenderer: IRenderer {
         }
 
         fun getBasicColorFromTuiColor(tuiColor: TuiColor): BasicColor {
-            var closestColor: BasicColor = BasicColor.WHITE
+            var closestColor: BasicColor = BasicColor.RED
             var minimumDist = Double.MAX_VALUE
 
             // use 3d distance formula to get nearest BasicColor
