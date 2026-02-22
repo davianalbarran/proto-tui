@@ -10,11 +10,11 @@ class RendererFactory(
     val isAnsi256Supported: Boolean,
 ) {
     var renderer: IRenderer = if (isTrueColorSupported) {
-        TrueColorRenderer()
+        TrueColorRenderer(null, null)
     } else if (isAnsi256Supported) {
-        Ansi256Renderer()
+        Ansi256Renderer(null, null)
     } else {
-        BasicRenderer()
+        BasicRenderer(null, null)
     }
 
     fun defaultRenderer(): RendererFactory {
@@ -28,6 +28,22 @@ class RendererFactory(
 
     fun withForegroundColor(color: TuiColor): RendererFactory {
         renderer.foregroundColor = color
+        return this
+    }
+
+    fun withDimensions(width: Int, height: Int): RendererFactory {
+        renderer.width = width
+        renderer.height = height
+        return this
+    }
+
+    fun withWidth(width: Int): RendererFactory {
+        renderer.width = width
+        return this
+    }
+
+    fun withHeight(height: Int): RendererFactory {
+        renderer.height = height
         return this
     }
 

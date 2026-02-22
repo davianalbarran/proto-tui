@@ -1,4 +1,4 @@
-package io.github.davianalbarran.tuicomponents
+package io.github.davianalbarran.tuicomponents.interfaces
 
 interface ITuiInputComponent {
     val actions: List<Runnable>
@@ -14,6 +14,6 @@ interface ITuiInputComponent {
 enum class TuiInputType {
     BUTTON,
     CHECKBOX,
-    TEXTFIELD,
+    TEXT,
     DROPDOWN,
 }

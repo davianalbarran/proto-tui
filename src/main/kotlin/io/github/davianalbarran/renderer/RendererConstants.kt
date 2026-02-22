@@ -47,14 +47,14 @@ object RendererConstants {
 //    30–37	Set foreground color
 //    38	Set foreground color	Next arguments are 5;n or 2;r;g;b
     const val SGR_SET_FOREGROUND_256_OR_TRUE_COLOR = "38"
-    const val SGR_SET_FOREGROUND_256 = "${SGR_SET_FOREGROUND_256_OR_TRUE_COLOR};5"
+    const val SGR_SET_FOREGROUND_256 = "${SGR_SET_FOREGROUND_256_OR_TRUE_COLOR}:5"
     const val SGR_SET_FOREGROUND_TRUE_COLOR = "${SGR_SET_FOREGROUND_256_OR_TRUE_COLOR};2"
 //    39	Default foreground color	Implementation defined (according to standard)
     const val SGR_SET_DEFAULT_FOREGROUND_COLOR = "39"
 //    40–47	Set background color
 //    48	Set background color	Next arguments are 5;n or 2;r;g;b
     const val SGR_SET_BACKGROUND_256_OR_TRUE_COLOR = "48"
-    const val SGR_SET_BACKGROUND_256 = "${SGR_SET_BACKGROUND_256_OR_TRUE_COLOR};5"
+    const val SGR_SET_BACKGROUND_256 = "${SGR_SET_BACKGROUND_256_OR_TRUE_COLOR}:5"
     const val SGR_SET_BACKGROUND_TRUE_COLOR = "${SGR_SET_BACKGROUND_256_OR_TRUE_COLOR};2"
 //    49	Default background color	Implementation defined (according to standard)
     const val SGR_SET_DEFAULT_BACKGROUND_COLOR = "49"
