@@ -27,7 +27,7 @@ fun main() {
     val renderer = factory.apply {
         withBackgroundColor(bgColor)
         withForegroundColor(fgColor)
-        withDimensions(100, 100)
+        withDimensions(200, 100)
     }.build()
 
     val helloWorldComponent = TuiLabel("Hello World").apply {

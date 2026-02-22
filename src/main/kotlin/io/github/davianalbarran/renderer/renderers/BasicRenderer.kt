@@ -87,7 +87,7 @@ class BasicRenderer(val initWidth: Int?, val initHeight: Int?): IRenderer {
             print(" ".repeat(width))
             resetStyle()
         }
-        print("${RendererConstants.SGR_PREFIX}H") // move if needed
+        print("${RendererConstants.SGR_PREFIX}H")
     }
 
     override fun resetStyle() { println(RendererConstants.RESET_CODE) }

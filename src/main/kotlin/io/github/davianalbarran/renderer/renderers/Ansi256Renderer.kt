@@ -32,7 +32,7 @@ class Ansi256Renderer(val initWidth: Int?, val initHeight: Int?): IRenderer {
 
     override fun init() {
         print("${RendererConstants.SGR_PREFIX}2J")
-        setBgFgColors(backgroundColor, foregroundColor)
+        clearWithColor(backgroundColor)
     }
 
     override fun setBgFgColors(backgroundColor: TuiColor?, foregroundColor: TuiColor?) {
@@ -79,7 +79,6 @@ class Ansi256Renderer(val initWidth: Int?, val initHeight: Int?): IRenderer {
 
         if (component is TuiLabel) {
             val padded = component.labelVal?.padEnd(width, ' ')
-//            print("\u001B[H") // move if needed
             print("$padded")
             resetStyle()
         }
@@ -92,6 +91,7 @@ class Ansi256Renderer(val initWidth: Int?, val initHeight: Int?): IRenderer {
             print(" ".repeat(width))
             print("${RendererConstants.SGR_PREFIX}0${RendererConstants.SGR_SUFFIX}")
         }
+        print("${RendererConstants.SGR_PREFIX}H")
     }
 
     override fun resetStyle() { println(RendererConstants.RESET_CODE) }
